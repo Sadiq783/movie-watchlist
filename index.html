@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Find movies, explore details, and build your personal watchlist."
+    />
+
+    <title>Find Your Film</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js" type="module" defer></script>
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header class="site-header">
+      <div class="hero">
+        <h1 class="hero-title">Find your film</h1>
+
+        <nav class="hero-navigation" aria-label="Main navigation">
+          <a href="#" class="hero-watchlist--link"> My Watchlist </a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main -->
+    <main class="main-content">
+      <!-- Movie Search -->
+      <section class="search-section" aria-label="Search movies">
+        <form class="search-form" id="search-form">
+          <label for="movie-search" class="sr-only"> Search for a movie </label>
+          <img src="images/Icon.svg" alt="" />
+          <input
+            type="search"
+            id="movie-search"
+            name="movie"
+            class="search-form--input"
+            placeholder="Search for a movie..."
+            autocomplete="off"
+            required
+          />
+
+          <button type="submit" class="search-form--button">Search</button>
+        </form>
+      </section>
+
+      <!-- Movie Search Results -->
+      <section class="movie-results" aria-label="Movie search results">
+        <!-- JavaScript will dynamically populate this list -->
+        <ul class="movie-list" id="movie-list" aria-live="polite"></ul>
+      </section>
+    </main>
+  </body>
+</html>
