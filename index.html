@@ -10,6 +10,23 @@
 
     <title>Find Your Film</title>
 
+    <!-- GOOGLE Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+      integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
     <link rel="stylesheet" href="style.css" />
     <script src="main.js" type="module" defer></script>
   </head>
@@ -30,27 +47,35 @@
     <main class="main-content">
       <!-- Movie Search -->
       <section class="search-section" aria-label="Search movies">
-        <form class="search-form" id="search-form">
-          <label for="movie-search" class="sr-only"> Search for a movie </label>
-          <img src="images/Icon.svg" alt="" />
-          <input
-            type="search"
-            id="movie-search"
-            name="movie"
-            class="search-form--input"
-            placeholder="Search for a movie..."
-            autocomplete="off"
-            required
-          />
+        <div class="container">
+          <form class="search-form" id="search-form">
+            <label for="movie-search" class="sr-only">
+              Search for a movie
+            </label>
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input
+              type="search"
+              id="movie-search"
+              name="movie"
+              class="search-form--input"
+              placeholder="Search for a movie..."
+              autocomplete="off"
+              required
+            />
 
-          <button type="submit" class="search-form--button">Search</button>
-        </form>
+            <button type="submit" class="search-form--button">Search</button>
+          </form>
+        </div>
       </section>
 
       <!-- Movie Search Results -->
       <section class="movie-results" aria-label="Movie search results">
         <!-- JavaScript will dynamically populate this list -->
-        <ul class="movie-list" id="movie-list" aria-live="polite"></ul>
+        <ul
+          class="movie-list container"
+          id="movie-list"
+          aria-live="polite"
+        ></ul>
       </section>
     </main>
   </body>

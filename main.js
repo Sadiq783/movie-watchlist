@@ -16,20 +16,23 @@ searchForm.addEventListener("submit", (e) => {
       console.log(data);
       movieList.innerHTML = `
 
-    <li id="movie">
+    <li id="movie" class="movie">
       <img src="${data.Poster}" alt="" class="poster" />
       <div class="description">
         <header>
           <h1 class="title">${data.Title}</h1>
-          <div>
-            <img src="Icon.svg" class="ratings-icon"/>
-            <span>${data.Ratings[0].Value.split("/")[0]}</span>
+          <div class="ratings-container">
+            <img src="images/star.svg" class="ratings-icon"/>
+            <span class="ratings">${data.Ratings[0].Value.split("/")[0]}</span>
           </div>
         </header>
         <div class="details">
           <p class="duration">${data.Runtime}</p>
           <p class="type">${data.Genre}</p>
-          <button class="btn-add-watchlist">Watchlist</button>
+          <button class="btn-add-watchlist">
+            <img src="images/plus.svg" />
+            Watchlist
+          </button>
         </div>
         <p class="plot">${data.Plot}</p>
       </div>
