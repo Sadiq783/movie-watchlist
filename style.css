@@ -49,25 +49,28 @@ body {
 .hero {
   display: flex;
   justify-content: space-between;
-}
-.hero-title {
-  font-weight: 900;
-  font-size: 4.2rem;
-  letter-spacing: -4.5%;
-  line-height: 2.3rem;
-}
 
-.hero-watchlist--link:link,
-.hero-watchlist--link:visited {
-  text-decoration: none;
-  color: #fff;
-  font-size: 1.4rem;
-  font-weight: 700;
-}
+  .hero-title {
+    font-weight: 900;
+    font-size: 4.2rem;
+    letter-spacing: -4.5%;
+    line-height: 2.3rem;
+  }
 
-.hero-watchlist--link:hover,
-.hero-watchlist--link:active {
-  border-bottom: 2px solid #fff;
+  .hero-watchlist--link {
+    &:link,
+    &:visited {
+      text-decoration: none;
+      color: #fff;
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+
+    &:hover,
+    &:active {
+      border-bottom: 2px solid #fff;
+    }
+  }
 }
 
 .search-form {
@@ -80,38 +83,38 @@ body {
   margin-inline: auto;
   position: relative;
   transform: translateY(-25px);
-}
 
-.search-form--input {
-  flex-grow: 1;
-  padding-left: 4.2rem;
-  font-family: inherit;
-  border: 1px solid #d1d5db;
-  border-radius: 6px 0 0 6px;
-  outline: none;
-}
+  .search-form--input {
+    flex-grow: 1;
+    padding-left: 4.2rem;
+    font-family: inherit;
+    border: 1px solid #d1d5db;
+    border-radius: 6px 0 0 6px;
+    outline: none;
 
-.search-form--input:focus-visible {
-  box-shadow: inset 0 0 0 1px #000;
-}
+    &:focus-visible {
+      box-shadow: inset 0 0 0 1px #000;
+    }
+  }
 
-.search-icon {
-  color: #9ca3af;
-  position: absolute;
-  top: 1.1rem;
-  left: 1.1rem;
-}
+  .search-icon {
+    color: #9ca3af;
+    position: absolute;
+    top: 1.1rem;
+    left: 1.1rem;
+  }
 
-.search-form--button {
-  background-color: #f9fafb;
-  border: 1px solid #d1d5db;
-  border-left: none;
-  border-radius: 0 6px 6px 0;
-  color: #374151;
-  font-weight: 600;
-  font-family: inherit;
-  padding: 0.9rem 3.4rem;
-  cursor: pointer;
+  .search-form--button {
+    background-color: #f9fafb;
+    border: 1px solid #d1d5db;
+    border-left: none;
+    border-radius: 0 6px 6px 0;
+    color: #374151;
+    font-weight: 600;
+    font-family: inherit;
+    padding: 0.9rem 3.4rem;
+    cursor: pointer;
+  }
 }
 
 .movie-list {
@@ -120,77 +123,77 @@ body {
 
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-}
 
-.movie {
-  box-shadow: 0 0 5px rgb(0 0 0 / 0.1);
-  border-radius: 3px;
-  overflow: hidden;
-  padding-right: 2rem;
+  .movie {
+    box-shadow: 0 0 5px rgb(0 0 0 / 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+    padding-right: 2rem;
 
-  display: grid;
-  grid-template-columns: 100px 1fr;
-  column-gap: 20px;
-}
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    column-gap: 20px;
+  }
 
-.poster {
-  width: 100px;
-  height: 100%;
-  border-radius: 4px;
-}
+  .poster {
+    width: 100px;
+    height: 100%;
+    border-radius: 4px;
+  }
 
-.movie header {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  margin-bottom: 1.2rem;
-}
+  header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1.2rem;
+  }
 
-.title {
-  font-weight: 600;
-  font-size: 1.8rem;
-}
+  .title {
+    font-weight: 600;
+    font-size: 1.8rem;
+  }
 
-.ratings-container {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
+  .ratings-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
 
-.ratings-icon {
-  width: 1.5rem;
-  height: 1.5rem;
-}
+  .ratings-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
 
-.ratings {
-  font-size: 1.2rem;
-  text-box-trim: trim-both;
-}
+  .ratings {
+    font-size: 1.2rem;
+    text-box-trim: trim-both;
+  }
 
-.details {
-  font-size: 1.2rem;
-  color: #111827;
-  display: flex;
-  margin-bottom: 15px;
-  gap: 2rem;
-}
+  .details {
+    font-size: 1.2rem;
+    color: #111827;
+    display: flex;
+    margin-bottom: 15px;
+    gap: 2rem;
+  }
 
-.btn-add-watchlist {
-  background-color: #fff;
-  border: none;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  cursor: pointer;
-  margin-left: auto;
-}
+  .btn-add-watchlist {
+    background-color: #fff;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    margin-left: auto;
+  }
 
-.btn-add-watchlist img {
-  width: 1.6rem;
-  height: 1.6rem;
-}
+  .btn-add-watchlist img {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
 
-.plot {
-  font-size: 1.4rem;
-  color: #6b7280;
+  .plot {
+    font-size: 1.4rem;
+    color: #6b7280;
+  }
 }
