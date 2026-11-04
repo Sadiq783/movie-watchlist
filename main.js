@@ -22,33 +22,35 @@ async function getMovie() {
     }
 
     const data = await res.json();
+    renderMovie(data);
+  } catch (err) {
+    console.error("Fetch error:", err);
+  }
+}
 
-    console.log(data);
-    movieList.innerHTML = `
+function renderMovie(movie) {
+  movieList.innerHTML = `
 
     <li id="movie" class="movie">
-      <img src="${data.Poster}" alt="" class="poster" />
+      <img src="${movie.Poster}" alt="" class="poster" />
       <div class="description">
         <header>
-          <h1 class="title">${data.Title}</h1>
+          <h1 class="title">${movie.Title}</h1>
           <div class="ratings-container">
             <img src="images/star.svg" class="ratings-icon"/>
-            <span class="ratings">${data.Ratings[0].Value.split("/")[0]}</span>
+            <span class="ratings">${movie.Ratings[0].Value.split("/")[0]}</span>
           </div>
         </header>
         <div class="details">
-          <p class="duration">${data.Runtime}</p>
-          <p class="type">${data.Genre}</p>
+          <p class="duration">${movie.Runtime}</p>
+          <p class="type">${movie.Genre}</p>
           <button class="btn-add-watchlist">
             <img src="images/plus.svg" />
             Watchlist
           </button>
         </div>
-        <p class="plot">${data.Plot}</p>
+        <p class="plot">${movie.Plot}</p>
       </div>
     </li>
     `;
-  } catch (err) {
-    console.error("Fetch error:", err);
-  }
 }
