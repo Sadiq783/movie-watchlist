@@ -10,11 +10,21 @@ searchForm.addEventListener("submit", (e) => {
 
   if (!movieSearch) return;
 
-  fetch(`${apiUrl}&t=${movieSearch.value}`)
-    .then((res) => res.json())
-    .then((data) => {
-      console.log(data);
-      movieList.innerHTML = `
+  getMovie();
+});
+
+async function getMovie() {
+  try {
+    const res = await fetch(`${apiUrl}&t=${movieSearch.value}`);
+
+    if (!res.ok) {
+      throw new Error("Network response was not ok");
+    }
+
+    const data = await res.json();
+
+    console.log(data);
+    movieList.innerHTML = `
 
     <li id="movie" class="movie">
       <img src="${data.Poster}" alt="" class="poster" />
@@ -38,5 +48,7 @@ searchForm.addEventListener("submit", (e) => {
       </div>
     </li>
     `;
-    });
-});
+  } catch (err) {
+    console.error("Fetch error:", err);
+  }
+}
