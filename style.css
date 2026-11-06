@@ -97,6 +97,11 @@ body {
     }
   }
 
+  input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    display: none;
+  }
+
   .search-icon {
     color: #9ca3af;
     position: absolute;
@@ -114,6 +119,42 @@ body {
     font-family: inherit;
     padding: 0.9rem 3.4rem;
     cursor: pointer;
+  }
+}
+
+/* 2. CUSTOM SEARCH INPUT CLEAR BUTTON */
+.clear-btn {
+  position: absolute;
+  right: 120px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  transition:
+    color 0.2s,
+    opacity 0.2s;
+  opacity: 0;
+  visibility: hidden;
+
+  &:hover {
+    color: #333;
+
+    .clear-btn.is-visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .clear-btn svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
   }
 }
 

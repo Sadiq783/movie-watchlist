@@ -4,6 +4,7 @@ const apiUrl = `http://www.omdbapi.com/?apikey=${apiKey}`;
 const searchForm = document.querySelector("#search-form");
 const movieSearch = document.querySelector("#movie-search");
 const movieList = document.querySelector("#movie-list");
+const clearBtn = document.getElementById("clearSearch");
 
 searchForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -54,3 +55,21 @@ function renderMovie(movie) {
     </li>
     `;
 }
+
+// Toggle the clear button visibility based on input content
+function toggleClearButton() {
+  if (movieSearch.value.length > 0) {
+    clearBtn.classList.add("is-visible");
+  } else {
+    clearBtn.classList.remove("is-visible");
+  }
+}
+
+movieSearch.addEventListener("input", toggleClearButton);
+
+// Handle the clear action when button is clicked
+clearBtn.addEventListener("click", function () {
+  movieSearch.value = "";
+  toggleClearButton();
+  movieSearch.focus();
+});
