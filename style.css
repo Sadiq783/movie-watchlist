@@ -162,7 +162,7 @@ body {
   margin-top: 6.3rem;
   list-style-type: none;
 
-  display: grid;
+  display: none;
   grid-template-columns: repeat(2, 1fr);
 
   .movie {
@@ -236,5 +236,45 @@ body {
   .plot {
     font-size: 1.4rem;
     color: #6b7280;
+  }
+}
+
+/* Loading State  */
+
+.loading {
+  display: none;
+  text-align: center;
+}
+
+.loader {
+  animation: spinningColor 1.5s ease-in-out infinite;
+  margin: 3rem auto;
+  border: 5px double #f0eff5;
+  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
+}
+
+@keyframes spinningColor {
+  0% {
+    transform: rotate(360deg);
+    border-top: 5px dashed #f56682;
+    border-bottom: 5px dashed #387eff;
+  }
+  25% {
+    border-top: 5px dashed #f591a6;
+    border-bottom: 5px dashed #6da7f7;
+  }
+  50% {
+    border-top: 5px dashed #fd878e;
+    border-bottom: 5px dashed #4ba3ff;
+  }
+  75% {
+    border-top: 5px dashed #f57f8f;
+    border-bottom: 5px dashed #569dff;
+  }
+  100% {
+    border-top: 5px dashed #f56682;
+    border-bottom: 5px dashed #387eff;
   }
 }
