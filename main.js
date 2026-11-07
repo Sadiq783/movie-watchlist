@@ -5,6 +5,8 @@ const searchForm = document.querySelector("#search-form");
 const movieSearch = document.querySelector("#movie-search");
 const movieList = document.querySelector("#movie-list");
 
+const loadingContainer = document.querySelector("#loading");
+
 searchForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -14,6 +16,10 @@ searchForm.addEventListener("submit", (e) => {
 });
 
 async function getMovie() {
+  movieList.style.display = "none";
+
+  // Show Loading State
+  loadingContainer.style.display = "block";
   try {
     const res = await fetch(`${apiUrl}&t=${movieSearch.value}`);
 
@@ -22,8 +28,17 @@ async function getMovie() {
     }
 
     const data = await res.json();
+
+    // Hide Loading state
+    loadingContainer.style.display = "none";
+
+    // Show List
+    movieList.style.display = "grid";
+
     renderMovie(data);
   } catch (err) {
+    // Hide Loading State
+    loadingContainer.style.display = "none";
     console.error("Fetch error:", err);
   }
 }
