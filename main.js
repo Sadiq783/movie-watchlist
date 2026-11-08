@@ -7,6 +7,7 @@ const movieList = document.querySelector("#movie-list");
 const clearBtn = document.getElementById("clearSearch");
 
 const loadingContainer = document.querySelector("#loading");
+const notFoundContainer = document.querySelector("#not-found-state");
 
 searchForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -18,6 +19,7 @@ searchForm.addEventListener("submit", (e) => {
 
 async function getMovie() {
   movieList.style.display = "none";
+  notFoundContainer.style.display = "none";
 
   // Show Loading State
   loadingContainer.style.display = "block";
@@ -29,6 +31,12 @@ async function getMovie() {
     }
 
     const data = await res.json();
+
+    // If not movie were found
+    if (data.Response === "False") {
+      loadingContainer.style.display = "none";
+      notFoundContainer.style.display = "block";
+    }
 
     // Hide Loading state
     loadingContainer.style.display = "none";

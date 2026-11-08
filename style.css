@@ -278,3 +278,15 @@ body {
     border-bottom: 5px dashed #387eff;
   }
 }
+
+.not-found-state {
+  margin-top: 5rem;
+  display: none;
+}
+
+.not-found-state p {
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #dfdddd;
+  text-align: center;
+}
