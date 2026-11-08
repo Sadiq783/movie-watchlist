@@ -144,18 +144,18 @@ body {
 
   &:hover {
     color: #333;
-
-    .clear-btn.is-visible {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .clear-btn svg {
-      width: 18px;
-      height: 18px;
-      fill: currentColor;
-    }
   }
+
+  svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+  }
+}
+
+.clear-btn.is-visible {
+  opacity: 1;
+  visibility: visible;
 }
 
 .movie-list {
