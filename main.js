@@ -36,6 +36,8 @@ async function getMovie() {
     if (data.Response === "False") {
       loadingContainer.style.display = "none";
       notFoundContainer.style.display = "block";
+
+      throw new Error("No movie was found matching your search.");
     }
 
     // Hide Loading state
