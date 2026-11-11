@@ -1,6 +1,10 @@
 const apiKey = import.meta.env.VITE_API_KEY;
 const apiUrl = `http://www.omdbapi.com/?apikey=${apiKey}`;
 
+const btnModalSkip = document.querySelector("#modal-skip-btn");
+const btnModalNext = document.querySelector("#modal-next-btn");
+const genreSelectionModal = document.querySelector("#genre-selection-modal");
+
 const searchForm = document.querySelector("#search-form");
 const movieSearch = document.querySelector("#movie-search");
 const movieList = document.querySelector("#movie-list");
@@ -97,4 +101,23 @@ clearBtn.addEventListener("click", function () {
   movieSearch.value = "";
   toggleClearButton();
   movieSearch.focus();
+});
+
+btnModalSkip.addEventListener("click", () => {
+  genreSelectionModal.style.display = "none";
+});
+
+btnModalNext.addEventListener("click", () => {
+  const selectedGenres = [];
+
+  const genreSelectionModalInputs = document.querySelectorAll(
+    "#genre-selection-form input:checked",
+  );
+
+  genreSelectionModalInputs.forEach((input) =>
+    selectedGenres.push(input.value),
+  );
+
+  // Close the Modal
+  genreSelectionModal.style.display = "none";
 });
