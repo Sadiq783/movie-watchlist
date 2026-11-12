@@ -292,6 +292,8 @@ body {
 }
 
 .genre-selection-modal {
+  border: none;
+  color: inherit;
   box-shadow: 0 0 10px rgb(0 0 0 /0.2);
 
   width: 95%;
@@ -303,7 +305,12 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 999;
+}
+
+.genre-selection-modal::backdrop {
+  background-color: rgb(0 0 0 / 0.25);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
 }
 
 .genre-selection-modal h2 {

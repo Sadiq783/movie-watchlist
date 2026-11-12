@@ -106,8 +106,12 @@
       </section>
 
       <!-- Genre Selection Modal  -->
-      <div class="genre-selection-modal" id="genre-selection-modal">
-        <h2>What genres do you enjoy watching?</h2>
+      <dialog
+        class="genre-selection-modal"
+        id="genre-selection-modal"
+        aria-labelledby="genre-selection-title"
+      >
+        <h2 id="genre-selection-title">What genres do you enjoy watching?</h2>
         <form id="genre-selection-form" class="genre-selection-form">
           <input type="checkbox" name="genre" value="action" id="action" />
           <label for="action">Action</label>
@@ -128,7 +132,7 @@
           <button class="btn" id="modal-skip-btn">Skip for now</button>
           <button class="btn" id="modal-next-btn">Next</button>
         </div>
-      </div>
+      </dialog>
     </main>
   </body>
 </html>

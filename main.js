@@ -5,6 +5,9 @@ const btnModalSkip = document.querySelector("#modal-skip-btn");
 const btnModalNext = document.querySelector("#modal-next-btn");
 const genreSelectionModal = document.querySelector("#genre-selection-modal");
 
+genreSelectionModal.showModal();
+genreSelectionModal.addEventListener("cancel", (e) => e.preventDefault());
+
 const searchForm = document.querySelector("#search-form");
 const movieSearch = document.querySelector("#movie-search");
 const movieList = document.querySelector("#movie-list");
@@ -104,7 +107,7 @@ clearBtn.addEventListener("click", function () {
 });
 
 btnModalSkip.addEventListener("click", () => {
-  genreSelectionModal.style.display = "none";
+  genreSelectionModal.close();
 });
 
 btnModalNext.addEventListener("click", () => {
@@ -119,5 +122,5 @@ btnModalNext.addEventListener("click", () => {
   );
 
   // Close the Modal
-  genreSelectionModal.style.display = "none";
+  genreSelectionModal.close();
 });
