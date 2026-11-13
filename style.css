@@ -334,7 +334,7 @@ body {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
-  margin-bottom: 2rem;
+  margin-bottom: 6rem;
 }
 
 .genre-selection-form label {
@@ -354,11 +354,21 @@ body {
 .modal-buttons {
   display: flex;
   justify-content: space-between;
+  gap: 2rem;
 }
 
 .btn {
   background-color: #fff;
   border: none;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+  border: 1px solid rgb(0 0 0 /0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
   cursor: pointer;
+  width: 100%;
+}
+
+.btn-next {
+  background-color: #000;
+  color: #fff;
 }
